@@ -1,0 +1,21 @@
+.applicant .title {
+    margin-bottom: 15px;
+}
+
+.applicant .button-add {
+    margin-bottom: 20px;
+}
+
+.applicant .button-add span {
+  display: inline-block;
+}
+
+.applicant .button-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+}
+
+.applicant .wrap-checkBox {
+    margin-bottom: 20px;
+}

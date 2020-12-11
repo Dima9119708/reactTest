@@ -1,0 +1,17 @@
+.client .select {
+    margin-bottom: 10px;
+}
+
+@media (min-width : 768px) {
+    .client .select { width : 300px;}
+}
+
+.client .name{
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.client .phone{
+    margin-bottom: 15px;
+}

@@ -7,7 +7,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h2, p {
+  margin: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  background-color: #F3F3F3;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.wrap {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.wrap:last-child {
+  margin-bottom: 0;
 }
