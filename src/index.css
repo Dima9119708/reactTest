@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2, p {
+h2, p, h4 {
   margin: 0;
 }
 
@@ -33,4 +33,14 @@ code {
 
 .wrap:last-child {
   margin-bottom: 0;
+}
+
+.select {
+  margin-bottom: 10px;
+}
+
+@media (min-width : 768px) {
+  .select {
+    width : 300px;
+  }
 }

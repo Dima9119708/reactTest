@@ -2,13 +2,14 @@ import React from 'react';
 import {Button, TextField} from "@material-ui/core";
 import { Autocomplete } from '@material-ui/lab';
 import {useDispatch, useSelector} from "react-redux";
-import {getApplicants, getApplicantsAsync, getClientsAsync} from "../../store/actions";
+import {getApplicantsAsync, getClientsAsync, getСlientAction} from "../../store/actions";
 import './client.style.css'
+import Submit from "../submitButtom/Submit";
 
 const Client = () => {
 
     const [filter, setFilter] = React.useState([])
-    const [client, setClient] = React.useState(null)
+    const client = useSelector( ({ client }) => client)
     const clients = useSelector( ({ getClients }) => getClients || [])
     const dispatch = useDispatch()
 
@@ -18,18 +19,13 @@ const Client = () => {
 
 
     const handleInputChange = ( _, value) => {
-        if (value && value.length > 3) {
-            setFilter(clients)
-        }
-        else {
-            setFilter([])
-            dispatch(getApplicants([]))
-        }
+        if (value && value.length > 3) setFilter(clients)
+        else setFilter([])
     }
 
     const handleChange = (event, client) => {
-        setClient(client)
-        if (client) dispatch(getApplicantsAsync(client.id))
+        dispatch(getСlientAction(null))
+        if (client) dispatch(getApplicantsAsync(client))
     }
 
     return (
@@ -39,6 +35,7 @@ const Client = () => {
             <div className="select">
 
                 <Autocomplete
+                   className="select"
                    options={filter}
                    getOptionLabel={(option) => option.name}
                    onInputChange={handleInputChange}
@@ -59,13 +56,7 @@ const Client = () => {
             { client && <>
                           <h3 className="name">{ client.name }</h3>
                           <p className="phone">Телефон. { client.phone }</p>
-                          <Button
-                              style={{fontSize : '15px'}}
-                              variant="contained"
-                              color="primary"
-                          >
-                              ЗБЕРЕГТИ ЗАЯВКУ
-                          </Button>
+                          <Submit />
                         </>
             }
 

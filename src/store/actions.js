@@ -1,9 +1,17 @@
-import {getApplicant, getClient} from "./constants";
+import {
+    addApplicantData, arrayIndexApplicant,
+    client,
+    delApplicant,
+    getApplicants,
+    getClients
+} from "./constants";
 import axios from 'axios';
 
-const getClients = (clients) => {
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDc0NjEyMDMsImV4cCI6MTYxMDA1MzIwMywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJ1c2VybmFtZSI6ImJ5Lmhhc2tlbGwifQ.F_0yZmAbIbPuonnXiKdxI9ne77y3CCFmoe-Wygp3wIgXShDoO64cnnTBsVQG6u6VUvZt1LrueXhUnbOmVKnbUTckKKkNcQWl6iHVO-9RgP2133SOzWcSmVDpf0BC_K0lczF0DaAmp1gHii-Ct50nORpSONSbWNnjkfhBIPbyLVDR2sKuGKyMGG-6Qy0JRDTFnt5AVO_z5HEpCYSrQdhwd_wl7gcD9-vH7_aQib9dq6htbDdqdFw1NXk84B_YTfa2szSFyMDuQkaTgXZwoOOouxEHy9JlJgkKgxK5W-f84cNFkFrYxUhxaNROgPFY8Cs9pB54NcVaSceQc2vF2lgtFb3VyC-ra3xTNtrNmzGPpikftkeU8lnojP8ifEsdeYWjgJGUa7HsR-VMq2fN9otGd0PqpXLpXPasBXEvub7tRyqLziGUG_h4SdgIOu0aGe3sItigzF3fnaCc-Vv8B1wM_qt05ahCgdMuMD7X2dW0eAFuO8zKZszz7owiD5S92QiJkI2sGUG5YzPTOPjch-Qoax--aM1QE8XFDvkDYCruARDTBxcqNp6QAdEANr_toscUpcwTM5-hNfSTGaWvF0dkJaek2PCCszOWAyz6TiLy9lGXVkFEGn-qeR9V0ecdHNx9F_6YNqgWAIOlMNCsYiNp77J6ggmLjJZfTYDh6BAwFNI'
+
+const getClientsAction = (clients) => {
     return {
-        type: getClient,
+        type: getClients,
         clients
     }
 }
@@ -12,27 +20,61 @@ export const getClientsAsync = () => dispatch => {
     axios
         .get('http://lexberry.com.ua/api/v1/clients', {
             headers: {
-                'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDUxNjY4NTIsImV4cCI6MTYwNzc1ODg1Miwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJ1c2VybmFtZSI6ImJ5Lmhhc2tlbGwifQ.PiLxggxQAwpLSRUivgbTfFw6uQ9P0iqwoRJ4Q0MqLyNN-Hrc_VRXNsaqO4KjDicwTTMAqZE2O0H3QjDI-pmbvnJcFEu-dIzCZGhHTMphbs_DuEow6UuPMKXmMEikQuxTeEx4IIZmRE2gsYn5D816mKo7u0STuWdA73jGghehFI2UVJIKMcdf-r1Vv-vQzSZTQLs7BsOpko7q1FpMhGDbtFGpJxJHJZxTMaWjel7m68jWwtjeSTTLStE5D5OHGsa5-vuuiFVXd6Xgy9BdlO5_VDF-CzDZZHOeMazLjPe_wPwsdXYJ5H8yLQTG7WEovxPdWmmK-OhpI4iHHxohY-Dq60TB9jKsAujfSor6pcBFtoVRW06pQ6vQiFxqTilb32YcRJXLcPL4loNFf0cwLxwSGfd52PdUdtYdaQJToNVfWJAYPC2VkvtLM_2lBQpO17IYuLFd0KaKulXGm4MaIFQtADIAI572oOjj69lEek5FcU5ZDG8AM4mVr1w8iDirrD-hNcoy03QiO7U6CVk7R1DQi87uvg3AAE60Ykty-liJ1bZi1opLW0yaCyh8fu2fF80vqrIoIKXn9HtIrOlVanuW4P5fdlmsCCVhJdcgNOx3AJqthCtLGyj3CRQhVTat0FXi8fj1FeLKTC9v2IC9DC7IczHwyWqGQI2E_DZTq0Q3BqM`
+                Authorization : `Bearer ${token}`
             }
         })
-        .then(res => dispatch(getClients(res.data.items)))
+        .then(res => dispatch(getClientsAction(res.data.items)))
+        .catch(err => console.warn(err))
 }
 
 
-export const getApplicants = (applicants) => {
+export const getApplicantsAction = (applicants) => {
     return {
-        type: getApplicant,
+        type: getApplicants,
         applicants
     }
 }
 
-export const getApplicantsAsync = (id) => dispatch => {
+export const getСlientAction = (clientObj) => {
+    return {
+        type : client,
+        clientObj
+    }
+}
+
+export const getApplicantsAsync = (client) => dispatch => {
 
     axios
-        .get(`http://lexberry.com.ua/api/v1/applicants?filter[${id}]=XXX`, {
+        .get(`http://lexberry.com.ua/api/v1/applicants?filter[${client.id}]=XXX`, {
             headers: {
-                'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDUxNjY4NTIsImV4cCI6MTYwNzc1ODg1Miwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJ1c2VybmFtZSI6ImJ5Lmhhc2tlbGwifQ.PiLxggxQAwpLSRUivgbTfFw6uQ9P0iqwoRJ4Q0MqLyNN-Hrc_VRXNsaqO4KjDicwTTMAqZE2O0H3QjDI-pmbvnJcFEu-dIzCZGhHTMphbs_DuEow6UuPMKXmMEikQuxTeEx4IIZmRE2gsYn5D816mKo7u0STuWdA73jGghehFI2UVJIKMcdf-r1Vv-vQzSZTQLs7BsOpko7q1FpMhGDbtFGpJxJHJZxTMaWjel7m68jWwtjeSTTLStE5D5OHGsa5-vuuiFVXd6Xgy9BdlO5_VDF-CzDZZHOeMazLjPe_wPwsdXYJ5H8yLQTG7WEovxPdWmmK-OhpI4iHHxohY-Dq60TB9jKsAujfSor6pcBFtoVRW06pQ6vQiFxqTilb32YcRJXLcPL4loNFf0cwLxwSGfd52PdUdtYdaQJToNVfWJAYPC2VkvtLM_2lBQpO17IYuLFd0KaKulXGm4MaIFQtADIAI572oOjj69lEek5FcU5ZDG8AM4mVr1w8iDirrD-hNcoy03QiO7U6CVk7R1DQi87uvg3AAE60Ykty-liJ1bZi1opLW0yaCyh8fu2fF80vqrIoIKXn9HtIrOlVanuW4P5fdlmsCCVhJdcgNOx3AJqthCtLGyj3CRQhVTat0FXi8fj1FeLKTC9v2IC9DC7IczHwyWqGQI2E_DZTq0Q3BqM`
+                'Authorization': `Bearer ${token}`
             }
         })
-        .then(res => dispatch(getApplicants(res.data.items)))
+        .then(res => {
+            dispatch(getApplicantsAction(res.data.items))
+            dispatch(getСlientAction(client))
+        })
+        .catch(err => console.warn(err))
+}
+
+
+export const addApplicant = (data) => {
+    return {
+        type : addApplicantData,
+        data
+    }
+}
+
+export const deleteApplicant = (id) => {
+    return {
+        type : delApplicant,
+        id
+    }
+}
+
+export const arrayIndexApplicantAction = (data) => {
+    return {
+        type : arrayIndexApplicant,
+        data
+    }
 }
