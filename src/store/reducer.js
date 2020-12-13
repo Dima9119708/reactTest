@@ -3,7 +3,7 @@ import {
     client,
     delApplicant,
     getApplicants,
-    getClients
+    getClients, jsonDATA
 } from "./constants";
 
 
@@ -15,7 +15,8 @@ const initialState = {
         id : '',
         applicantsIds : [],
         newApplicants : []
-    }
+    },
+    jsonDATA : ''
 }
 
 export const reducer = (state = initialState, action) => {
@@ -58,13 +59,16 @@ export const reducer = (state = initialState, action) => {
                                 .filter(applicant => applicant.id !== action.id)
             }
 
+        // Формирование обькта Json
         case arrayIndexApplicant :
 
+            // Получаем всех пользователей по индексам
             const applicantsIds = action.data.reduce((acc, itemIndex) => {
                 acc.push(state.getApplicants[itemIndex])
                 return acc
             }, [])
 
+            // Если у заявителя есть свойство delete то добавлем в новый массив
             const newApplicants = applicantsIds.filter(item => item?.delete)
 
             return {
@@ -74,6 +78,13 @@ export const reducer = (state = initialState, action) => {
                     applicantsIds,
                     newApplicants
                 }
+            }
+
+        case jsonDATA :
+
+            return {
+                ...state,
+                jsonDATA: action.data
             }
 
         default :

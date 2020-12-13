@@ -5,13 +5,15 @@
       <change afterPath="$PROJECT_DIR$/src/components/jsonData/JsonData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/applicants/Applicants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/Applicants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/applicants/applicant.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/applicant.style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/applicants/applicant.style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/applicants/components/AddApplicant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/components/AddApplicant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/client/Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/Client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/client/client.style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/submitButtom/Submit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/submitButtom/Submit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
     </list>
@@ -65,6 +67,16 @@
     <configuration name="Submit.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/submitButtom/Submit.js" working-dir="$PROJECT_DIR$/src/components/submitButtom">
       <method v="2" />
     </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -77,6 +89,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy" />
         <item itemvalue="Node.js.Submit.js" />
       </list>
     </recent_temporary>
@@ -91,7 +104,7 @@
       <updated>1607674598066</updated>
       <workItem from="1607674599184" duration="17673000" />
       <workItem from="1607762853555" duration="23367000" />
-      <workItem from="1607847831829" duration="5255000" />
+      <workItem from="1607847831829" duration="9768000" />
     </task>
     <task id="LOCAL-00001" summary="Добавление заявителей + кнопка submit">
       <created>1607796455602</created>
@@ -100,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607796455602</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Фикс адаптива.&#10;Добавление Json строки с данными польз.">
+      <created>1607853578989</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607853578989</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +162,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавление заявителей + кнопка submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление заявителей + кнопка submit" />
+    <MESSAGE value="Фикс адаптива.&#10;Добавление Json строки с данными польз." />
+    <option name="LAST_COMMIT_MESSAGE" value="Фикс адаптива.&#10;Добавление Json строки с данными польз." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

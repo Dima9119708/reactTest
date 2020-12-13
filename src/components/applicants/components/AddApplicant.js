@@ -3,6 +3,58 @@ import {Button, FormControlLabel, Radio, RadioGroup, TextField} from "@material-
 import {Autocomplete} from "@material-ui/lab";
 import {useDispatch} from "react-redux";
 import {addApplicant} from "../../../store/actions";
+import {makeStyles} from "@material-ui/styles";
+
+
+const useStyles = makeStyles({
+    title : {
+        marginBottom : '15px'
+    },
+    formAddApplicant : {
+        width: '100%',
+        marginBottom: '25px',
+        '& .title' : {
+            marginBottom : '15px',
+            color: '#858585',
+            fontSize: '18px'
+        }
+    },
+    buttonAdd : {
+        '& span' : {
+            display : 'inline-block',
+        }
+    },
+    buttonWrap : {
+        display : 'flex',
+        flexDirection: 'column',
+        width: '180px',
+        marginBottom : '15px',
+    },
+    formInner : {
+        display: 'flex',
+        flexDirection: 'column',
+        '@media (min-width : 768px)' : {
+            flexDirection: 'row',
+            alignItems: 'flex-end'
+        },
+
+        '& .form-inputs-group' : {
+            display: 'flex',
+            flexDirection: 'column',
+            '&:last-child' : {
+                marginRight: '0',
+            },
+            '@media (min-width : 768px)': {
+                marginRight: '20px',
+                width: '50%',
+            }
+        },
+
+        '& .label' : {
+            marginBottom : '20px'
+        }
+    }
+});
 
 const countries = ['Украина', 'Грузия', 'Италия']
 
@@ -18,15 +70,20 @@ const AddApplicant = () => {
     const [originalAddress, setOriginalAddress] = React.useState('')
     const [openForm, setOpenForm] = React.useState(false)
     const dispatch = useDispatch()
+    const styles = useStyles()
 
+    // Смена страны
     const handleChangeCountries = (_, value) => setCountry(value)
 
+    // Открытие формы добавление заявителя
     const handleClickOpenForm = () => setOpenForm(!openForm)
 
+    // Добавление заявителя
     const handleAddApplicant = () => {
 
         if (name.length && address.length) {
 
+            // Формирование обьекта
             const data = {
                 address: {address, city, country, postCode},
                 id: Date.now(),
@@ -36,6 +93,8 @@ const AddApplicant = () => {
                 originalName,
                 delete: true
             }
+
+            // Добавление и очистка инпутов, закрытие формы
             dispatch(addApplicant(data))
             setName('')
             setInnCode('')
@@ -49,10 +108,10 @@ const AddApplicant = () => {
     }
 
     return (<>
-            <div className="button-wrap">
+            <div className={styles.buttonWrap}>
                 <Button
                     onClick={handleClickOpenForm}
-                    className="button-add"
+                    className={styles.buttonAdd}
                     variant="outlined"
                     color="primary"
                 >
@@ -60,13 +119,10 @@ const AddApplicant = () => {
                 </Button>
             </div>
 
-            <form
-                style={{
-                    display: openForm ? 'block' : 'none'
-                }}
-                className="form-addApplicant"
+            <form style={{ display: openForm ? 'block' : 'none'}}
+                  className={styles.formAddApplicant}
             >
-                <h4 className="title">Додати заявника</h4>
+                <h4 className='title'>Додати заявника</h4>
 
                 <RadioGroup
                     aria-label="gender"
@@ -78,7 +134,7 @@ const AddApplicant = () => {
                     <FormControlLabel value="Юридична особа" control={<Radio color="primary"/>} label="Юридична особа"/>
                 </RadioGroup>
 
-                <div className="form-inner">
+                <div className={styles.formInner}>
                     <div className="form-inputs-group">
                         <div className="select">
                             <Autocomplete
@@ -112,7 +168,9 @@ const AddApplicant = () => {
 
                     <div className="form-inputs-group"
                         style={{
-                            display: country === 'Украина' ? 'none' : 'inline-flex'
+                            display: country === 'Украина'
+                                     ? 'none'
+                                     : 'inline-flex'
                         }}
                     >
 
@@ -123,10 +181,10 @@ const AddApplicant = () => {
                     </div>
                 </div>
 
-                <div className="button-wrap">
+                <div className={styles.buttonWrap}>
                     <Button
                         onClick={handleAddApplicant}
-                        className="button-add"
+                        className={styles.buttonAdd}
                         variant="outlined"
                         color="primary"
                     >

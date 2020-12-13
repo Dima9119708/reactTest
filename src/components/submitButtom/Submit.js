@@ -1,14 +1,17 @@
 import React from 'react';
 import {Button} from "@material-ui/core";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {jsonDataAction} from "../../store/actions";
 
 const Submit = () => {
 
+    // Получаем обьект с выбраными данными пользователя
     const data = useSelector( ({ data }) => data)
-    const [jsonData, setJson] = React.useState('')
+    const dispatch = useDispatch()
 
+    // При клике на ЗБЕРЕГТИ ЗАЯВКУ выводим Json строку.
     const handleClick = () => {
-        setJson( JSON.stringify(data, null, 2) )
+        dispatch(jsonDataAction(JSON.stringify(data, null, 2)))
     }
 
     return (<>
@@ -20,10 +23,6 @@ const Submit = () => {
         >
             ЗБЕРЕГТИ ЗАЯВКУ
         </Button>
-
-        <pre>
-            {jsonData}
-        </pre>
     </>);
 };
 
