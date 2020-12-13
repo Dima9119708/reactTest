@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a9e2221-1ab6-4586-b70d-c13f506f0033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/applicants/components/AddApplicant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/submitButtom/Submit.js" afterDir="false" />
+    <list default="true" id="5a9e2221-1ab6-4586-b70d-c13f506f0033" name="Default Changelist" comment="Добавление заявителей + кнопка submit">
+      <change afterPath="$PROJECT_DIR$/src/components/jsonData/JsonData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/applicants/Applicants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/Applicants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/applicants/applicant.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/applicant.style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/applicants/components/AddApplicant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/components/AddApplicant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/client/Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/Client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/client/client.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/client.style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/submitButtom/Submit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/submitButtom/Submit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
@@ -50,7 +48,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.stylesheets.stylelint" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="E:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -64,6 +62,9 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="Submit.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/submitButtom/Submit.js" working-dir="$PROJECT_DIR$/src/components/submitButtom">
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -74,6 +75,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Submit.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,24 +90,66 @@
       <option name="presentableId" value="Default" />
       <updated>1607674598066</updated>
       <workItem from="1607674599184" duration="17673000" />
-      <workItem from="1607762853555" duration="22388000" />
+      <workItem from="1607762853555" duration="23367000" />
+      <workItem from="1607847831829" duration="5255000" />
     </task>
+    <task id="LOCAL-00001" summary="Добавление заявителей + кнопка submit">
+      <created>1607796455602</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607796455602</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Добавление заявителей + кнопка submit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление заявителей + кнопка submit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

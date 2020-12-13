@@ -3,7 +3,7 @@ import {
     client,
     delApplicant,
     getApplicants,
-    getClients
+    getClients, jsonDATA
 } from "./constants";
 import axios from 'axios';
 
@@ -75,6 +75,13 @@ export const deleteApplicant = (id) => {
 export const arrayIndexApplicantAction = (data) => {
     return {
         type : arrayIndexApplicant,
+        data
+    }
+}
+
+export const jsonDataAction = (data) => {
+    return {
+        type : jsonDATA,
         data
     }
 }
