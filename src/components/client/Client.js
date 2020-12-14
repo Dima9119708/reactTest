@@ -43,10 +43,13 @@ const Client = () => {
 
     // Если символов в инпуте больше 3, берем клиентов которых получили с сервера
     const handleInputChange = ( _, value) => {
-        if (value.length > 3) {
+
+        const valTrim = value.trim()
+
+        if (valTrim.length > 3) {
             dispatch(getFilterApplicantAsync(value, setFilter))
         }
-        else if ( value === '' ) {
+        else if ( valTrim === '' ) {
             setFilter(clients)
         }
         else {

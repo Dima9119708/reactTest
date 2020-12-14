@@ -26,7 +26,7 @@ const getClientsAction = (clients) => {
 
 export const getClientsAsync = (fnSetFilter) => dispatch => {
     axios
-        .get('http://lexberry.com.ua/api/v1/clients', {
+        .get('https://lexberry.com.ua/api/v1/clients', {
             headers: {
                 Authorization : `Bearer ${token}`
             }
@@ -49,7 +49,7 @@ const getApplicantsAction = (applicants) => {
 export const getApplicantsAsync = (client) => dispatch => {
 
     axios
-        .get(`http://lexberry.com.ua/api/v1/applicants?filter[${client.id}]=XXX`, {
+        .get(`https://lexberry.com.ua/api/v1/applicants?filter[${client.id}]=XXX`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -66,7 +66,7 @@ export const getFilterApplicantAsync = (value, fnSetFilter) => _ => {
 
     debounce(() => {
         axios
-            .get(`http://lexberry.com.ua/api/v1/clients?search[name]=${value}`, {
+            .get(`https://lexberry.com.ua/api/v1/clients?search[name]=${value}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
