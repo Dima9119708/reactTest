@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e2221-1ab6-4586-b70d-c13f506f0033" name="Default Changelist" comment="Добавление заявителей + кнопка submit">
-      <change afterPath="$PROJECT_DIR$/src/components/jsonData/JsonData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/applicants/Applicants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/Applicants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/applicants/applicant.style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/applicants/components/AddApplicant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicants/components/AddApplicant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/client/Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/Client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/client/client.style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/submitButtom/Submit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/submitButtom/Submit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +42,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="E:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -104,7 +96,8 @@
       <updated>1607674598066</updated>
       <workItem from="1607674599184" duration="17673000" />
       <workItem from="1607762853555" duration="23367000" />
-      <workItem from="1607847831829" duration="9768000" />
+      <workItem from="1607847831829" duration="10108000" />
+      <workItem from="1607938872578" duration="2486000" />
     </task>
     <task id="LOCAL-00001" summary="Добавление заявителей + кнопка submit">
       <created>1607796455602</created>
@@ -120,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607853578989</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Файлы css удалены. &#10;Переписано на makeStyles hook material.">
+      <created>1607861963570</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607861963570</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +153,12 @@
                   </entry>
                 </map>
               </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="83" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="82" />
+                </map>
+              </option>
             </State>
           </value>
         </entry>
@@ -163,7 +169,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавление заявителей + кнопка submit" />
     <MESSAGE value="Фикс адаптива.&#10;Добавление Json строки с данными польз." />
-    <option name="LAST_COMMIT_MESSAGE" value="Фикс адаптива.&#10;Добавление Json строки с данными польз." />
+    <MESSAGE value="Файлы css удалены. &#10;Переписано на makeStyles hook material." />
+    <option name="LAST_COMMIT_MESSAGE" value="Файлы css удалены. &#10;Переписано на makeStyles hook material." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,7 +4,7 @@ import {Autocomplete } from '@material-ui/lab';
 import {useDispatch, useSelector} from "react-redux";
 import {
     getApplicantsAsync,
-    getClientsAsync,
+    getClientsAsync, getFilterApplicantAsync,
     getСlientAction
 } from "../../store/actions";
 import Submit from "../submitButtom/Submit";
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 const Client = () => {
 
     // Фильтрация массива после 3 символа
-    const [filter, setFilter] = React.useState([])
+    const [filterClient, setFilter] = React.useState([])
     // Получаем обьект выбраного клиента
     const client = useSelector( ({ client }) => client)
     // Получаем клиента
@@ -38,13 +38,20 @@ const Client = () => {
 
     // Получаем асинхронно клиента
     React.useEffect( () => {
-        dispatch(getClientsAsync())
+        dispatch(getClientsAsync(setFilter))
     }, [])
 
     // Если символов в инпуте больше 3, берем клиентов которых получили с сервера
     const handleInputChange = ( _, value) => {
-        if (value && value.length > 3) setFilter(clients)
-        else setFilter([])
+        if (value.length > 3) {
+            dispatch(getFilterApplicantAsync(value, setFilter))
+        }
+        else if ( value === '' ) {
+            setFilter(clients)
+        }
+        else {
+            setFilter([])
+        }
     }
 
     // Если в инпуте корректный пользователь, получаем его асинхронно
@@ -62,8 +69,8 @@ const Client = () => {
 
                 <Autocomplete
                    className="select"
-                   options={filter}
-                   getOptionLabel={(option) => option.name}
+                   options={filterClient}
+                   getOptionLabel={(option) => option?.name || option?.label}
                    onInputChange={handleInputChange}
                    onChange={handleChange}
                    loading={ clients.length ? false : true }
@@ -80,8 +87,8 @@ const Client = () => {
             </div>
 
             { client && <>
-                          <h3 className="name">{ client.name }</h3>
-                          <p className="phone">Телефон. { client.phone }</p>
+                          <h3 className="name">{ client?.name || client?.label }</h3>
+                          <p className="phone">Телефон. { client.phone || 'Не указан' }</p>
                           <Submit />
                         </>
             }
